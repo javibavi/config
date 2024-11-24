@@ -66,7 +66,7 @@ window#waybar {
 
 #workspaces button {
     color: @iris;
-    /* background-color: @base; */
+    background-color: @base;
     margin: 2px 2px;
     padding: 4px 4px 4px 4px;
     border-radius: 50%;
@@ -98,6 +98,7 @@ window#waybar {
     opacity: 1;
     border-radius: 10px;
     margin: 8px 0px 8px 8px;
+    margin-left: 5px;
 }
 
 #workspaces button.focused {
@@ -107,7 +108,7 @@ window#waybar {
 }
 
 #workspaces button.focused * {
-    color: @iris;
+    color: @rose;
 }
 
 
@@ -136,38 +137,42 @@ window#waybar {
  * Module styles
  * -------------------------------------------------------------------------- */
 #tray {
-    margin-left: 10px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #custom-cava-internal {
     border-radius: 10px;
-    margin-left: 10px;
+    margin-left: 5px;
     color: @iris;
+    background-color: @base;
 }
 
 #clock {
     /* background-color:#a3be8c; */
+    background-color: @base;
     color: @foam;
     border-radius: 10px;
     margin: 8px 10px;
+    margin-left: 5px;
 }
 
 #backlight {
     color: @gold;
+    background-color: @base;
     /* border-bottom: 2px solid @gold; */
     border-radius: 10px 0 0 10px;
 }
 
 #battery {
     color: #d8dee9;
+    background-color: @base;
     /* border-bottom: 2px solid #d8dee9; */
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
+    border-radius: 0 0 0 0;
 }
 
 #battery.charging {
     color: @pine;
+    background-color: @base;
     /* border-bottom: 2px solid #81a1c1; */
 }
 
@@ -180,6 +185,7 @@ window#waybar {
 
 #battery.critical:not(.charging) {
     color: @love;
+    background-color: @base;
     /* border-bottom: 2px solid #bf616a; */
     animation-name: blink;
     animation-duration: 0.5s;
@@ -203,28 +209,32 @@ window#waybar {
 
 #network.disabled {
     color: @love;
+    background-color: @base;
     /* border-bottom: 2px solid #bf616a; */
 }
 
 #network {
     color: @pine;
+    background-color: @base;
     /* border-bottom: 2px solid @green; */
-    border-radius: 10px;
-    margin-right: 5px;
+    border-radius: 0 0 0 0;
 }
 
 #network.disconnected {
     color: @love;
+    background-color: @base;
     /* border-bottom: 2px solid #bf616a; */
 }
 
 #pulseaudio {
     color: @rose;
+    background-color: @base;
     /* border-bottom: 2px solid @rose; */
 }
 
 #pulseaudio.muted {
     color: @muted;
+    background-color: @base;
     /* border-bottom: 2px solid #3b4252; */
 }
 
@@ -246,36 +256,33 @@ window#waybar {
 #custom-launcher {
     background-color: @base;
     color: @iris;
-    border-radius: 10px;
-    padding: 7.5px 10px;
-    margin-right: 10px;
+    border-radius: 10px 10px 10px 10px;
     font-size: 25px;
+    margin-left: 10px;
+    padding: 0px 0px 0px 10px;
 }
 
 #custom-power {
-    color: @base;
-    background-color: @iris;
-    border-radius: 10px;
-    margin-left: 10px;
+    color: @iris;
+    background-color: @base;
+    border-radius: 0 10px 10px 0;
     margin-right: 10px;
-    padding: 5px 5px;
 }
 
 #custom-keyboard-layout {
     color: @rose;
+    background-color: @base;
     /* border-bottom: 2px solid @peach; */
-    border-radius: 0 10px 10px 0;
-    margin-right: 2.5px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 /* Styles for playerctl */
 #custom-playerctl {
     color: @iris;
     background-color: @base;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 8px 5px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 17px;
+    margin: 8px 10px;
+    margin-left: 5px;
 }
 

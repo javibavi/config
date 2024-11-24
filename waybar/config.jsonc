@@ -9,8 +9,9 @@
     "custom/launcher",
     "sway/workspaces",
     "custom/cava-internal",
+    "custom/playerctl"
   ],
-  "modules-center": ["clock", "custom/playerctl"],
+  "modules-center": ["clock"],
   "modules-right": [
     "backlight",
     "pulseaudio",
@@ -43,7 +44,7 @@
     }
   },
   "custom/cava-internal": {
-    "exec": "sh ~/.config/Waybar-Sway/scripts/Cava.sh",
+    "exec": "sh ~/.config/waybar/scripts/Cava.sh",
     "format": "{}",
     "tooltip": false,
     "layer": "below",
@@ -128,9 +129,11 @@
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon}{volume: >3}%",
+    "format": "{icon}{volume: >3}% {format_source}",
     "format-bluetooth": "{icon}{volume: >3}%",
-    "format-muted": " muted",
+    "format-muted": " muted {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " ",
     "format-icons": {
       "headphones": "",
       "handsfree": "",
@@ -143,7 +146,7 @@
     "on-click": "pavucontrol",
   },
   "custom/power": {
-    "format": "⏻",
+    "format": "⏻ ",
     "on-click": "~/.config/rofi/powermenu/type-6/powermenu.sh",
     "tooltip": false
   },
@@ -167,6 +170,6 @@
     "tooltip": false,
     "on-click": "playerctl play-pause",
     "interval": 1,
-    "max-length": 30
+    "max-length": 35
   },
 }
