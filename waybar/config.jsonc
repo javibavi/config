@@ -16,9 +16,11 @@
     "backlight",
     "pulseaudio",
     "custom/keyboard-layout",
+    "custom/scratchpad-indicator",
     "tray",
     "battery",
     "network",
+    "custom/notification",
     "custom/power"
   ],
 
@@ -171,5 +173,28 @@
     "on-click": "playerctl play-pause",
     "interval": 1,
     "max-length": 35
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": " {icon} ",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+  },
+  "custom/scratchpad-indicator": {
+    "interval": 2,
+    "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
+    "format": " {}",
   },
 }

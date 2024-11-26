@@ -19,7 +19,7 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-screenshot=''
+screenshot='🖻'
 shutdown=''
 reboot=''
 lock=''
@@ -70,7 +70,7 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend;hyprlock
 		elif [[ $1 == '--logout' ]]; then
-            loginctl kill-user javi_bavi
+            loginctl terminate-user javi_bavi
 		fi
 	else
 		exit 0

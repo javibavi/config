@@ -125,7 +125,9 @@ window#waybar {
 #tray,
 #custom-power,
 #custom-launcher,
-#custom-playerctl {
+#custom-playerctl,
+#custom-notification 
+#custom-scratchpad-indicator {
     padding: 5px 8px;
     border-style: solid;
     background-color: shade(@base, 1);
@@ -154,6 +156,7 @@ window#waybar {
     border-radius: 10px;
     margin: 8px 10px;
     margin-left: 5px;
+    margin-right: 5px
 }
 
 #backlight {
@@ -284,5 +287,21 @@ window#waybar {
     font-size: 17px;
     margin: 8px 10px;
     margin-left: 5px;
+}
+
+#custom-notification {
+    color: @rose;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+    margin: 8px 0px;
+}
+
+#custom-scratchpad-indicator{
+    color: @foam;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+    margin: 8px 0px;
 }
 
