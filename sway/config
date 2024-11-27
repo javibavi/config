@@ -14,6 +14,8 @@ set $right l
 
 ### Environment and Autostart Applications
 exec systemctl --user import-environment DISPLAY
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 exec autotiling
 exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -34,7 +36,7 @@ bindswitch lid:on --locked --nowarn --reload exec systemctl suspend; hyprlock
 # To list available outputs: `swaymsg -t get_outputs`
 
 # Set borders and gaps
-default_border pixel 6
+default_border pixel 4
 gaps inner 15
 gaps outer 5
 
@@ -56,6 +58,7 @@ input type:keyboard {
 
 ### Key Bindings
 # Basics
+floating_modifier $mod normal
 bindsym $mod+t exec $term
 bindsym $mod+f exec $file
 bindsym $mod+r exec $menu
@@ -118,18 +121,18 @@ bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 
 # Utilities
-bindsym Print exec /home/javi_bavi/scripts/snapshot.sh
+bindsym --locked Print exec grim
 bindsym $mod+s exec /home/javi_bavi/scripts/snapshot.sh
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym $mod+Shift+s exec pkill spotify
+bindsym --locked $mod+Shift+s exec pkill spotify
 bindsym $mod+n exec swaync-client -t
 
 ### Idle Configuration

@@ -195,6 +195,6 @@
   "custom/scratchpad-indicator": {
     "interval": 2,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": " {}",
+    "format": "  {} ",
   },
 }
