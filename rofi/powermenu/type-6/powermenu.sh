@@ -87,10 +87,10 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $screenshot)
-        ~/scripts/snapshot.sh
+        ~/.config/scripts/snapshot.sh
         ;;
     $lock)
-        hyprlock
+        ~/.config/scripts/hyprsync.sh;hyprlock
         ;;
     $suspend)
 		run_cmd --suspend

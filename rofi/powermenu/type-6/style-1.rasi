@@ -57,7 +57,7 @@ imagebox {
     spacing:                     30px;
     padding:                     30px;
     background-color:            transparent;
-    background-image:            url("~/Pictures/Rice/spiderman.png", height);
+    background-image:            url("~/.config/wallpapers/spiderman.png", height);
     children:                    [ "inputbar", "dummy", "message" ];
 }
 
