@@ -7,14 +7,15 @@
   // Choose the order of the modules idle_inhibitor
   "modules-left": [
     "custom/launcher",
-    "sway/workspaces",
+    "hyprland/workspaces",
+    "custom/cava-internal",
+    "custom/playerctl"
   ],
   "modules-center": ["clock"],
   "modules-right": [
     "backlight",
     "pulseaudio",
-    "custom/keyboard-layout",
-    "custom/scratchpad-indicator",
+    "custom/hypr-keyboard-layout",
     "tray",
     "battery",
     "network",
@@ -24,7 +25,7 @@
 
   // Modules configuration
 
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{icon}",
@@ -101,7 +102,7 @@
   },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
+    "format": "{icon}{percent: >3}%",
     "format-icons": ["", ""],
     "on-scroll-down": "brightnessctl -c backlight set 1%-",
     "on-scroll-up": "brightnessctl -c backlight set +1%"
@@ -112,7 +113,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon} ",
+    "format": "{icon}{capacity: >3}%",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -129,10 +130,10 @@
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{volume}% {icon}  {format_source}",
+    "format": "{icon}{volume: >3}% {format_source}",
     "format-bluetooth": "{icon}{volume: >3}%",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format-muted": " muted {format_source}",
+    "format-source": " {volume}%",
     "format-source-muted": " ",
     "format-icons": {
       "headphones": "",
@@ -154,11 +155,21 @@
     "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
     // Interval set only as a fallback, as the value is updated by signal
     "interval": 1,
-    "format": "{} ", // Icon: keyboard
+    "format": " {}", // Icon: keyboard
     // Signal sent by Sway key binding (~/.config/sway/key-bindings)
     "signal": 1, // SIGHUP
     "tooltip": false,
   },
+    "custom/hypr-keyboard-layout": {
+        "exec": "hyprctl devices | grep -m1 \"Layout\" | awk -F': ' '{print $2}'",
+        // Interval set only as a fallback, as the value is updated by signal
+        "interval": 1,
+        "format": " {}", // Icon: keyboard
+        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+        "signal": 1, // SIGHUP
+        "tooltip": false,
+      },
+
   "custom/launcher": {
     "format": "󰣇 ",
     "on-click": "~/.config/rofi/launchers/type-7/launcher.sh",
@@ -174,7 +185,7 @@
   },
   "custom/notification": {
     "tooltip": false,
-    "format": "{icon}",
+    "format": " {icon} ",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
       "none": "",
@@ -193,6 +204,6 @@
   "custom/scratchpad-indicator": {
     "interval": 2,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": "{} ",
+    "format": "  {} ",
   },
 }

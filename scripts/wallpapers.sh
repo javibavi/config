@@ -5,7 +5,7 @@
 BACKGROUND_DIR="/home/javi_bavi/.config/wallpapers"
 
 # Get a sorted list of background files in the directory
-BACKGROUND_FILES=($(ls -1 "$BACKGROUND_DIR"/*.{png,jpg,jpeg} 2>/dev/null))
+BACKGROUND_FILES=($(ls -1 "$BACKGROUND_DIR"/*.{png,jpg,jpeg,webp} 2>/dev/null))
 
 # If no files are found, exit
 if [[ ${#BACKGROUND_FILES[@]} -eq 0 ]]; then
@@ -31,3 +31,6 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % ${#BACKGROUND_FILES[@]} ))
 # Set the next background
 swww img "${BACKGROUND_FILES[NEXT_INDEX]}" --transition-type wipe --transition-duration 4
 
+~/.config/scripts/hyprsync.sh
+~/.config/scripts/launchersync.sh
+~/.config/scripts/powersync.sh

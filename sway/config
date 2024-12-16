@@ -23,6 +23,7 @@ exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon
 exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/spiderman.png
+exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/hyprsync.sh & ~/.config/scripts/powersync.sh & ~/.config/scripts/launchersync.sh"
 exec swaync & hypridle
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
@@ -34,13 +35,13 @@ client.unfocused #EA9A97 #EA9A97 #EA9A97 #EA9A97
 
 ### Outputs
 output HDMI-A-1 resolution 1920x1200 position 1920,0
-bindswitch lid:on --locked --nowarn --reload exec systemctl suspend; hyprlock
+# bindswitch lid:on --locked --nowarn exec systemctl suspend
 # To list available outputs: `swaymsg -t get_outputs`
 
 # Set borders and gaps
 default_border pixel 4
 gaps inner 15
-gaps outer 5
+gaps outer 10
 
 ### Input Devices
 input "1267:12817:ASUE1211:00_04F3:3211_Touchpad" {
@@ -49,12 +50,12 @@ input "1267:12817:ASUE1211:00_04F3:3211_Touchpad" {
     natural_scroll disabled
     dwt enabled
     accel_profile "flat" # Disable acceleration
-    pointer_accel 1      # Mouse sensitivity (-1 to 1)
+    pointer_accel .75      # Mouse sensitivity (-1 to 1)
 }
 
 input type:keyboard {
     xkb_layout us,latam
-    xkb_options grp:rctrl_toggle
+    xkb_options grp:win_space_toggle
 }
 
 
@@ -132,20 +133,29 @@ bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked $mod+Shift+p exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked $mod+Shift+n exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym --locked $mod+Shift+s exec pkill spotify
 bindsym $mod+n exec swaync-client -t
 
-### Idle Configuration
-# Uncomment the below section to enable idle and lock behavior
-# exec swayidle -w \
-#     timeout 300 'swaylock -f -c 000000' \
-#     timeout 600 'swaymsg "output * power off"' \
-#     resume 'swaymsg "output * power on"' \
-#     before-sleep 'swaylock -f -c 000000'
+
+# Swayfx config
+corner_radius 30
+for_window [app_id="nemo"] blur true, opacity set 0.85
+for_window [app_id="tlpui"] blur true, opacity set 0.90
+for_window [app_id="kitty"] blur true;
+for_window [class="Spotify"] blur true, opacity set 0.85
+for_window [class="discord"] blur true, opacity set 0.9
+for_window [class="jetbrains-studio"] blur true, opacity set 0.85
+for_window [class="swaync"] blur true, opacity set 0.9
+
+shadows enable
+shadow_color #000000
+shadow_blur_radius 40
 
 ### Include Additional Configs
 include @sysconfdir@/sway/config.d/*

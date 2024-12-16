@@ -70,7 +70,7 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend;hyprlock
 		elif [[ $1 == '--logout' ]]; then
-            loginctl terminate-user javi_bavi
+            loginctl terminate-session $XDG_SESSION_ID
 		fi
 	else
 		exit 0
@@ -90,7 +90,7 @@ case ${chosen} in
         ~/.config/scripts/snapshot.sh
         ;;
     $lock)
-        ~/.config/scripts/hyprsync.sh;hyprlock
+        hyprlock
         ;;
     $suspend)
 		run_cmd --suspend
