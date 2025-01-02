@@ -31,6 +31,6 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % ${#BACKGROUND_FILES[@]} ))
 # Set the next background
 swww img "${BACKGROUND_FILES[NEXT_INDEX]}" --transition-type wipe --transition-duration 4
 
-~/.config/scripts/hyprsync.sh
 ~/.config/scripts/launchersync.sh
 ~/.config/scripts/powersync.sh
+~/.config/scripts/hyprsync.sh

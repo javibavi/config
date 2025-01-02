@@ -22,8 +22,8 @@ exec autotiling
 exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon
-exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/spiderman.png
-exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/hyprsync.sh & ~/.config/scripts/powersync.sh & ~/.config/scripts/launchersync.sh"
+exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/street.jpg
+exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/powersync.sh & ~/.config/scripts/hyprsync.sh ~/.config/scripts/launchersync.sh"
 exec swaync & hypridle
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
@@ -34,7 +34,7 @@ client.focused_inactive #EA9A97 #EA9A97 #EA9A97 #EA9A97
 client.unfocused #EA9A97 #EA9A97 #EA9A97 #EA9A97
 
 ### Outputs
-output HDMI-A-1 resolution 1920x1200 position 1920,0
+output eDP-1 resolution 1920x1200 position 1920,0
 # bindswitch lid:on --locked --nowarn exec systemctl suspend
 # To list available outputs: `swaymsg -t get_outputs`
 
