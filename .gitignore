@@ -1,0 +1,53 @@
+ags/
+Android Open Source Project/
+BetterDiscord/
+BetterDiscord Installer/
+blender/
+cef_user_data/
+Code/
+dconf/
+discord/
+Electron/
+fontconfig/
+fontforge/
+gh/
+GIMP/
+glib-2.0/
+go/
+godot/
+google/
+Google/
+google-chrome/
+gtk-2.0/
+gtk-3.0/
+gtk-4.0/
+ibus/
+Kitware/
+lazygit/
+libaccounts-glib/
+libreoffice/
+lxqt/
+Minecraft Linux Launcher/
+Morgen/
+ncmpcpp/
+nemo/
+nwg-displays/
+nwg-look/
+obs-studio/
+procps/
+pulse/
+qalculate/
+qt5ct/
+QtProject/
+Raspberry Pi/
+session/
+spotify/
+tlpui/
+touchegg/
+vivaldi/
+vlc/
+wireshark/
+xsettingsd/
+xviewer/
+yay/
+
