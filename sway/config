@@ -152,6 +152,7 @@ for_window [class="Spotify"] blur true, opacity set 0.85
 for_window [class="discord"] blur true, opacity set 0.9
 for_window [class="jetbrains-studio"] blur true, opacity set 0.85
 for_window [class="swaync"] blur true, opacity set 0.9
+for_window [app_id="fum_"] floating enable,resize set 300 480, move position 789 -30
 
 shadows enable
 shadow_color #000000

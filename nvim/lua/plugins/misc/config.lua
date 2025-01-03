@@ -6,5 +6,8 @@ M.presence = function()
 	})
 end
 
+M.trouble = function()
+	require("trouble").setup()
+end
 
 return M
