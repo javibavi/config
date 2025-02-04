@@ -4,6 +4,10 @@ M.barbar = function()
     vim.g.barbar_auto_setup = true
 end
 
+M.barbecue = function()
+    require("barbecue").setup()
+end
+
 M.dash = function()
     require("dashboard").setup({
         theme = "doom",

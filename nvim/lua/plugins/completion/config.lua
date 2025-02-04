@@ -64,7 +64,8 @@ M.cmp = function()
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
-            { name = "lazydev"},
+            { name = "rustaceanvim" },
+            { name = "lazydev" },
             { name = "luasnip" }, -- For luasnip users.
         }, {
             { name = "buffer" },

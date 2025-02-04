@@ -34,4 +34,12 @@ return {
 			mappings.lsp_config()
 		end,
 	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^5", -- Recommended
+		lazy = false, -- This plugin is already lazy
+        init = function ()
+            settings.rustacean()
+        end
+	},
 }

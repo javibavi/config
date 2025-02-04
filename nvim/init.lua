@@ -18,6 +18,7 @@ require("vim-options")
 -- Setup lazy.nvim
 require("lazy").setup({
 	require("plugins.completion.plugins"),
+    require("plugins.diagnostics.plugins"),
 	require("plugins.editor.plugins"),
 	require("plugins.filepickers.plugins"),
 	require("plugins.formatting-linting.plugins"),

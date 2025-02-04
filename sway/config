@@ -22,7 +22,7 @@ exec autotiling
 exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon
-exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/street.jpg
+exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/spiderman-custom.png
 exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/powersync.sh & ~/.config/scripts/hyprsync.sh ~/.config/scripts/launchersync.sh"
 exec swaync & hypridle
 exec wl-paste --type text --watch cliphist store
@@ -141,6 +141,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym --locked $mod+Shift+s exec pkill spotify
 bindsym $mod+n exec swaync-client -t
+bindsym $mod+m exec kitty --class="fum_" -o initial_window_width=26c -o initial_window_height=24c -e fum
 
 
 # Swayfx config

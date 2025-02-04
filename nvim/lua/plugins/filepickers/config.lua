@@ -13,7 +13,11 @@ M.nvimtree = function()
 			group_empty = true,
 		},
 		filters = {
-			dotfiles = true,
+			dotfiles = false,
+		},
+		git = {
+			enable = true,
+			ignore = false,
 		},
 	})
 end
@@ -25,6 +29,11 @@ M.telescope = function()
 				require("telescope.themes").get_dropdown({
 					-- even more opts
 				}),
+			},
+		},
+		pickers = {
+			find_files = {
+				hidden = true, -- Include hidden files (dotfiles)
 			},
 		},
 	})

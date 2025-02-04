@@ -17,7 +17,9 @@ return {
         dependencies = {
             "SmiteshP/nvim-navic",
         },
-        opts = {},
+        config = function()
+            settings.barbecue()
+        end,
     },
     {
         "nvimdev/dashboard-nvim",

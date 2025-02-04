@@ -13,11 +13,16 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.smartindent = false
 vim.opt.spell = true
 
-
 vim.diagnostic.config({
-  virtual_text = false,
+    virtual_text = false,
 })
 
 -- Sets the leader key to space
 vim.g.mapleader = " "
 
+local signs = { Error = "●", Warn = "●", Hint = "●", Info = "●" }
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end

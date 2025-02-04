@@ -9,14 +9,6 @@ return {
         end,
     },
     {
-        "folke/trouble.nvim",
-        cmd = "Trouble",
-        config = function()
-            settings.trouble()
-            mappings.trouble()
-        end,
-    },
-    {
         "OXY2DEV/markview.nvim",
         lazy = false, -- Recommended
         dependencies = {
