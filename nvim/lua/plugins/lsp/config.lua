@@ -18,7 +18,7 @@ end
 
 M.lsp_config = function()
     -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
     local lspconfig = require("lspconfig")
     -- Call the setup function for every LSP you have installed
     lspconfig.lua_ls.setup({ capabilities = capabilities })
@@ -49,7 +49,6 @@ M.rustacean = function()
                 -- rust-analyzer language server configuration
                 ["rust-analyzer"] = {},
             },
-            autostart = true,
         },
         -- DAP configuration
         dap = {},

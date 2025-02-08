@@ -38,6 +38,13 @@ M.barbar = function()
     map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 end
 
+M.dropbar = function()
+    local dropbar_api = require("dropbar.api")
+    map("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+    map("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+    map("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
+end
+
 M.dash = function()
     map("n", "<leader>h", "<cmd>Dashboard<CR>", {})
 end

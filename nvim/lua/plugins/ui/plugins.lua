@@ -11,14 +11,14 @@ return {
         end,
     },
     {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = "*",
+        "Bekaboo/dropbar.nvim",
+        -- optional, but required for fuzzy finder support
         dependencies = {
-            "SmiteshP/nvim-navic",
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
         },
         config = function()
-            settings.barbecue()
+            mappings.dropbar()
         end,
     },
     {

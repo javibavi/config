@@ -12,7 +12,6 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
-		cmd = "Trouble",
 		config = function()
 			settings.trouble()
 			mappings.trouble()

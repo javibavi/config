@@ -8,4 +8,8 @@ M.leap = function()
 	map({ "x", "o" }, "S", "<Plug>(leap-backward)")
 end
 
+M.aerial = function ()
+    map("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+end
+
 return M

@@ -1,76 +1,123 @@
 local M = {}
 
-M.cmp = function()
-    -- Set up nvim-cmp.
-    -- This function is used to allow the tab button to be used for cycling through autocompletion
-    local has_words_before = function()
-        unpack = unpack or table.unpack
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
-    local luasnip = require("luasnip")
-    local cmp = require("cmp")
+M.colorful = function()
+	require("colorful-menu").setup({})
+end
 
-    -- This ensures that autopairs are used whenever a function is selected
-    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+M.blink = function()
+	-- Set up blink.cmp plugin
+	require("blink.cmp").setup({
 
-    -- Creates a VSCode like experience with the completion engine
-    require("luasnip.loaders.from_vscode").lazy_load()
+		-- In case my theme depends on nvim_cmp
+		appearance = {
+			use_nvim_cmp_as_default = true,
+			kind_icons = {
+				Text = "",
+				Method = "",
+				Function = "",
+				Constructor = "",
+				Field = "",
+				Variable = "",
+				Class = "",
+				Interface = "",
+				Module = "",
+				Property = "",
+				Unit = "",
+				Value = "",
+				Enum = "",
+				Keyword = "",
+				Snippet = "",
+				Color = "",
+				File = "",
+				Reference = "",
+				Folder = "",
+				EnumMember = "",
+				Constant = "",
+				Struct = "",
+				Event = "",
+				Operator = "",
+				TypeParameter = "",
+			},
+		},
+		--
+		-- Enabling the signature highlights (might get rid of this for colofulmenu)
+		signature = {
+			enabled = true,
+		},
 
-    cmp.setup({
-        snippet = {
-            -- REQUIRED - you must specify a snippet engine
-            expand = function(args)
-                require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-            end,
-        },
-        window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
-        },
-        mapping = cmp.mapping.preset.insert({
+		-- Added luasnip to the snippets table
+		snippets = { preset = "luasnip" },
 
-            -- This is all so that we can tab whenever we want to use autocompletion
-            ["<Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                    -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                    -- that way you will only jump inside the snippet region
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                elseif has_words_before() then
-                    cmp.complete()
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
+		-- Config for the various sources
+		sources = {
+			default = {
+				"lsp",
+				"path",
+				"rustaceanvim",
+				"snippets",
+				"buffer",
+			},
 
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
+			-- Setup rustaceanvim as a compatible source
+			providers = {
+				rustaceanvim = {
+					name = "rustaceanvim",
+					module = "blink.compat.source",
+					score_offset = -3,
+				},
+			},
 
-            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-            ["<C-f>"] = cmp.mapping.scroll_docs(4),
-            ["<C-Space>"] = cmp.mapping.complete(),
-            ["<C-e>"] = cmp.mapping.abort(),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-            { name = "rustaceanvim" },
-            { name = "lazydev" },
-            { name = "luasnip" }, -- For luasnip users.
-        }, {
-            { name = "buffer" },
-        }),
-    })
+			-- Get rid of commandline completion when input is short
+			min_keyword_length = function(ctx)
+				-- only applies when typing a command, doesn't apply to arguments
+				if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+					return 2
+				end
+				return 0
+			end,
+		},
+
+		-- Set keymaps for cycling with tab and S-tab
+		keymap = {
+			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-e>"] = { "hide", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
+
+			["<Tab>"] = { "select_next", "fallback" },
+			["<S-Tab>"] = { "select_prev", "fallback" },
+
+			["<Up>"] = { "snippet_backward", "fallback" },
+			["<Down>"] = { "snippet_forward", "fallback" },
+			["<C-p>"] = { "select_prev", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
+
+			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+			["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+		},
+
+		-- For colorfulmenu plugin
+		completion = {
+			menu = {
+				draw = {
+					-- We don't need label_description now because label and label_description are already
+					-- combined together in label by colorful-menu.nvim.
+					columns = { { "kind_icon" }, { "label", gap = 1 } },
+					components = {
+						label = {
+							text = function(ctx)
+								return require("colorful-menu").blink_components_text(ctx)
+							end,
+							highlight = function(ctx)
+								return require("colorful-menu").blink_components_highlight(ctx)
+							end,
+						},
+					},
+				},
+			},
+		},
+	})
 end
 
 return M

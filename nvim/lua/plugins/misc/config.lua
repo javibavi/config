@@ -6,4 +6,8 @@ M.presence = function()
     })
 end
 
+M.substitute = function ()
+    require("rip-substitute").setup({})
+end
+
 return M
