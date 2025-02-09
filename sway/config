@@ -157,7 +157,7 @@ bindsym $mod+m exec kitty --class="fum_" -o initial_window_width=26c -o initial_
 
 
 # Swayfx config
-corner_radius 30
+corner_radius 15
 for_window [app_id="nemo"] blur true, opacity set 0.85
 for_window [app_id="tlpui"] blur true, opacity set 0.90
 for_window [app_id="kitty"] blur true;
