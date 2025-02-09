@@ -34,5 +34,5 @@ return {
             settings.aerial()
             mappings.aerial()
         end
-    }
+    },
 }

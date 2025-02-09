@@ -9,7 +9,7 @@ M.leap = function()
 end
 
 M.aerial = function ()
-    map("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+    map("n", "<leader>o", "<cmd>AerialToggle<CR>")
 end
 
 return M

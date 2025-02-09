@@ -13,4 +13,10 @@ echo "File names swapped successfully!"
 
 pkill waybar
 pkill cava
-waybar &
+waybar -c ~/.config/waybar/config.jsonc &
+
+# Check if HDMI-A-1 is connected
+if swaymsg -t get_outputs | grep -q '"name": "HDMI-A-1"'; then
+    # Start Waybar for the secondary monitor (HDMI-A-1)
+    waybar -c ~/.config/waybar/second-monitor.jsonc -s ~/.config/waybar/second-style.css &
+fi

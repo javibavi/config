@@ -57,7 +57,7 @@ imagebox {
     spacing:                     30px;
     padding:                     30px;
     background-color:            transparent;
-    background-image:            url("/home/javi_bavi/.config/wallpapers/spiderman-custom.png", height);
+    background-image: url("/home/javi_bavi/.config/wallpapers/spiderman.png", height);
     children:                    [ "inputbar", "dummy", "message" ];
 }
 
@@ -68,7 +68,7 @@ userimage {
     border-radius:               10px;
     border-color:                @background-alt;
     background-color:            transparent;
-    background-image:            url("/home/javi_bavi/.config/wallpapers/spiderman-custom.png", height);
+    background-image: url("/home/javi_bavi/.config/wallpapers/spiderman.png", height);
 }
 
 /*****----- Inputbar -----*****/

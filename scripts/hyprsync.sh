@@ -1,10 +1,9 @@
 #!/bin/bash
-
 # Path to your hyprlock config file
 HYPRLOCK_CONFIG="$HOME/.config/hypr/hyprlock.conf"
 
-# Query the current wallpaper from swww and extract the file path
-CURRENT_WALLPAPER=$(swww query | grep -oP '(?<=currently displaying: image: ).*')
+# Query the current wallpaper from swww and extract the file path - updated for multi-monitor
+CURRENT_WALLPAPER=$(swww query | grep -m1 'image:' | awk -F': ' '{print $NF}' | tr -d '\r')
 
 # Check if a valid wallpaper path was extracted
 if [[ -n "$CURRENT_WALLPAPER" ]]; then

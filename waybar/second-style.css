@@ -1,0 +1,295 @@
+
+
+
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@import "rose-pine-moon.css";
+
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+
+* {
+    color: @pine;
+    border: 0;
+    padding: 0 0;
+    font-family: "JetBrainsMono Nerd Font Propo Regular", monospace;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    /* font-family: "Hack Nerd Font"; */
+    font-size: 18px;
+    /* padding-bottom:4px;
+     padding-top: 4px; */
+}
+
+window#waybar {
+    border: 0px solid rgba(0, 0, 0, 0);
+    /* border-radius: 10px; */
+    /* background:#2d2a2e; */
+    /* background-color: rgba(36, 39, 58, 0.85); */
+    background-color: rgba(0, 0, 0, 0);
+    /* background-color: shade(#1e1e2e, 0.95); */
+}
+
+#workspaces button {
+    color: @iris;
+    background-color: @base;
+    margin: 0px 0px;
+    border-radius: 0 30px 30px 0;
+    padding: 4px 4px 4px 4px;
+}
+
+#workspaces button:hover {
+    color: @rose;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    border: 0px;
+    background: none;
+    border-radius: 0 30px 30px 0;
+}
+
+#workspaces button:hover * {
+    color: @rose;
+    background-color: @base;
+    border-radius: 0 30px 30px 0;
+}
+
+#workspaces * {
+    color: @iris;
+    border-radius: 0 30px 30px 0;
+    font-size: 23.5px;
+}
+
+#workspaces {
+    border-style: solid;
+    background-color: @base;
+    opacity: 1;
+    border-radius: 0 30px 30px 0;
+    margin: 8px 0px 8px 0px;
+    /*margin-left: 5px; */
+}
+
+#workspaces button.focused {
+    color: @iris;
+    /* background-color: @rose; */
+}
+
+#workspaces button.focused * {
+    color: @rose;
+}
+
+
+#clock,
+#custom-cava-internal,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#custom-power,
+#custom-launcher,
+#custom-playerctl,
+#custom-notification,
+#custom-hypr-keyboard-layout,
+#custom-scratchpad-indicator {
+    padding: 5px 8px;
+    border-style: solid;
+    background-color: shade(@base, 1);
+    opacity: 1;
+    margin: 8px 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+#tray {
+    border-radius: 0px 0px 0px 0px;
+}
+
+#custom-cava-internal {
+    border-radius: 30px;
+    margin-left: 5px;
+    color: @iris;
+    background-color: @base;
+}
+
+#clock {
+    /* background-color:#a3be8c; */
+    background-color: @base;
+    color: @foam;
+    border-radius: 30px;
+    margin: 8px 10px;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+#backlight {
+    color: @gold;
+    background-color: @base;
+    /* border-bottom: 2px solid @gold; */
+    border-radius: 30px 0 0 30px;
+}
+
+#battery {
+    color: #d8dee9;
+    background-color: @base;
+    /* border-bottom: 2px solid #d8dee9; */
+    border-radius: 0 0 0 0;
+}
+
+#battery.charging {
+    color: @pine;
+    background-color: @base;
+    /* border-bottom: 2px solid #81a1c1; */
+}
+
+@keyframes blink {
+    to {
+        color: @love;
+        /* border-bottom: 2px solid @red; */
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: @love;
+    background-color: @base;
+    /* border-bottom: 2px solid #bf616a; */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: @foam;
+    /* border-bottom: 2px solid @foam; */
+}
+
+#cpu #cpu-icon {
+    color: @foam;
+}
+
+#memory {
+    color: @foam;
+}
+
+#network.disabled {
+    color: @love;
+    background-color: @base;
+    /* border-bottom: 2px solid #bf616a; */
+}
+
+#network {
+    color: @pine;
+    background-color: @base;
+    /* border-bottom: 2px solid @green; */
+    border-radius: 30 0 0 30;
+}
+
+#network.disconnected {
+    color: @love;
+    background-color: @base;
+    /* border-bottom: 2px solid #bf616a; */
+}
+
+#pulseaudio {
+    color: @rose;
+    background-color: @base;
+    /* border-bottom: 2px solid @rose; */
+}
+
+#pulseaudio.muted {
+    color: @muted;
+    background-color: @base;
+    /* border-bottom: 2px solid #3b4252; */
+}
+
+#temperature {
+    color: @pine;
+    /* border-bottom: 2px solid @teal; */
+    border-radius: 30px 0 0 30px;
+}
+
+#temperature.critical {
+    color: @love;
+    /* border-bottom: 2px solid @red; */
+}
+
+
+#custom-launcher,
+#custom-power {}
+
+#custom-launcher {
+    background-color: @base;
+    color: @iris;
+    border-radius: 30px 0px 0px 30px;
+    font-size: 25px;
+    margin-left: 10px;
+    padding: 0px 0px 0px 10px;
+}
+
+#custom-power {
+    color: @iris;
+    background-color: @base;
+    border-radius: 0 30px 30px 0;
+    margin-right: 10px;
+}
+
+#custom-keyboard-layout {
+    color: @rose;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+}
+
+#custom-hypr-keyboard-layout {
+    color: @rose;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+}
+
+/* Styles for playerctl */
+#custom-playerctl {
+    color: @iris;
+    background-color: @base;
+    border-radius: 30px 30px 30px 30px;
+    font-size: 17px;
+    margin: 8px 10px;
+    margin-left: 5px;
+}
+
+#custom-notification {
+    color: @rose;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+    margin: 8px 0px;
+}
+
+#custom-scratchpad-indicator{
+    color: @foam;
+    background-color: @base;
+    /* border-bottom: 2px solid @peach; */
+    border-radius: 0px 0px 0px 0px;
+    margin: 8px 0px;
+}

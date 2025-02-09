@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "output": "eDP-1",
+    "output": "HDMI-A-1",
     "height": 63,
     "margin": "0 0 0 0",
     //"width": 1350, // Waybar width
@@ -14,13 +14,9 @@
         "clock"
     ],
     "modules-right": [
-        "backlight",
-        "pulseaudio",
-        "custom/keyboard-layout",
+        "network",
         "custom/scratchpad-indicator",
         "tray",
-        "battery",
-        "network",
         "custom/notification",
         "custom/power"
     ],
