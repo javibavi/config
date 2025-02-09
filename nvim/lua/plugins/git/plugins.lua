@@ -1,5 +1,11 @@
-local settings = require("plugins.completion.config")
-local mappings = require("plugins.completion.mappings")
-return {
+local settings = require("plugins.git.config")
+local mappings = require("plugins.git.mappings")
 
+return {
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function ()
+            settings.gitsigns()
+        end
+    }
 }

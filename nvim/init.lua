@@ -22,6 +22,7 @@ require("lazy").setup({
 	require("plugins.editor.plugins"),
 	require("plugins.filepickers.plugins"),
 	require("plugins.formatting-linting.plugins"),
+    require("plugins.git.plugins"),
 	require("plugins.lsp.plugins"),
 	require("plugins.misc.plugins"),
 	require("plugins.navigation.plugins"),
