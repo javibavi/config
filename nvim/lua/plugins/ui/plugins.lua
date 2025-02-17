@@ -60,4 +60,8 @@ return {
 			settings.rosepine()
 		end,
 	},
+	{
+		"kevinhwang91/nvim-bqf",
+		ft = "qf",
+	},
 }

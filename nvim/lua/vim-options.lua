@@ -26,3 +26,12 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+
+-- General mappings for the quickfix
+local map = vim.keymap.set
+map("n", "<leader>qo", ":copen<CR>", { silent = true, desc = "Open Quickfix" })
+map("n", "<leader>qc", ":cclose<CR>", { silent = true, desc = "Close Quickfix" })
+map("n", "]q", ":cnext<CR>", { silent = true, desc = "Next Quickfix Item" })
+map("n", "[q", ":cprev<CR>", { silent = true, desc = "Previous Quickfix Item" })
+map("n", "<leader>ql", ":clist<CR>", { silent = true, desc = "List Quickfix Items" })

@@ -19,24 +19,6 @@ M.multicursor = function()
 	require("multicursor-nvim").setup()
 end
 
-M.surround = function()
-	require("nvim-surround").setup({
-		-- Configuration here, or leave empty to use defaults
-		keymaps = {
-			insert = "<C-g>s",
-			insert_line = "<C-g>S",
-			normal = "<leader>s",
-			normal_cur = "<leader>ss", -- Use this
-			normal_line = "<leader>S",
-			normal_cur_line = "<leader>SS", -- Probably use this if you need to
-			visual = "<leader>s", -- Most def use this
-			visual_line = "<leader>S", -- Maybe this too
-			delete = "ds", -- Use this
-			change = "cs", -- Use this
-			change_line = "cS",
-		},
-	})
-end
 
 M.todo = function()
 	require("todo-comments").setup()
@@ -73,19 +55,6 @@ end
 
 M.ibl = function()
 	require("ibl").setup()
-end
-
-M.ufo = function()
-	vim.o.foldcolumn = "1" -- '0' is not bad
-	vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-	vim.o.foldlevelstart = 99
-	vim.o.foldenable = true
-
-	require("ufo").setup({
-		provider_selector = function(bufnr, filetype, buftype)
-			return { "treesitter", "indent" }
-		end,
-	})
 end
 
 return M

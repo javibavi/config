@@ -5,4 +5,8 @@ M.substitute = function()
 	map({"n", "x"}, "<leader>fs", function() require("rip-substitute").sub() end, {})
 end
 
+M.grug = function ()
+    map("n", "<leader>r", "<cmd>GrugFar<CR>", {})
+end
+
 return M

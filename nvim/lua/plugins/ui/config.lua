@@ -8,7 +8,7 @@ M.dash = function()
 	require("dashboard").setup({
 		theme = "doom",
 		hide = {
-			tabline = false,
+			tabline = true,
 			statusline = false,
 		},
 		config = {
