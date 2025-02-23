@@ -24,16 +24,14 @@ return {
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
+		opts = settings.dash,
 		config = function()
-			settings.dash()
 			mappings.dash()
 		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		config = function()
-			settings.lualine()
-		end,
+		opts = settings.lualine,
 	},
 	{
 		"folke/noice.nvim",

@@ -28,11 +28,11 @@ return {
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
 	},
-    {
-        'stevearc/aerial.nvim',
-        config = function ()
-            settings.aerial()
-            mappings.aerial()
-        end
-    },
+	{
+		"stevearc/aerial.nvim",
+		config = function()
+			settings.aerial()
+			mappings.aerial()
+		end,
+	},
 }

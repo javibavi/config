@@ -13,8 +13,8 @@ return {
     {
         "Wansmer/treesj",
         event = "InsertEnter",
+        opts = settings.treesj,
         config = function ()
-            settings.treesj()
             mappings.treesj()
         end
     }

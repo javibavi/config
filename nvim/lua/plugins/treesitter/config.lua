@@ -17,10 +17,8 @@ M.treesitter = function()
 	})
 end
 
-M.treesj = function ()
-    require("treesj").setup({
-        use_default_keymaps = false
-    })
-end
+M.treesj = {
+	use_default_keymaps = false,
+}
 
 return M

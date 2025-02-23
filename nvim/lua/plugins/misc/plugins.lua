@@ -3,15 +3,14 @@ local mappings = require("plugins.misc.mappings")
 
 return {
 	{
-		"andweeb/presence.nvim",
-		config = function()
-			settings.presence()
-		end,
+		"vyfor/cord.nvim",
+		build = ":Cord update",
+		opts = {},
 	},
 	{
 		"chrisgrieser/nvim-rip-substitute",
+		opts = {},
 		config = function()
-			settings.substitute()
 			mappings.substitute()
 		end,
 	},
@@ -45,15 +44,13 @@ return {
 	{
 		"rachartier/tiny-glimmer.nvim",
 		event = "VeryLazy",
-		config = function()
-			settings.glimmer()
-		end,
+		opts = settings.glimmer,
 	},
 	{
 		"MagicDuck/grug-far.nvim",
 		config = function()
-            settings.grug()
-            mappings.grug()
-        end,
+			settings.grug()
+			mappings.grug()
+		end,
 	},
 }

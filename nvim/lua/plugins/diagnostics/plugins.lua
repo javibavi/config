@@ -6,14 +6,12 @@ return {
 		"rachartier/tiny-inline-diagnostic.nvim",
 		event = "VeryLazy", -- Or `LspAttach`
 		priority = 1000, -- needs to be loaded in first
-		config = function()
-            settings.tinyinline()
-		end,
+        opts = {},
 	},
 	{
 		"folke/trouble.nvim",
 		config = function()
-			settings.trouble()
+            settings.trouble()
 			mappings.trouble()
 		end,
 	},

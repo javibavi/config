@@ -57,12 +57,13 @@ gaps outer 10
 
 ### Input Devices
 input "1267:12817:ASUE1211:00_04F3:3211_Touchpad" {
-    left_handed enabled
+    left_handed disabled
     tap enabled
-    natural_scroll disabled
+    natural_scroll enabled
     dwt enabled
     accel_profile "flat" # Disable acceleration
     pointer_accel .75      # Mouse sensitivity (-1 to 1)
+    scroll_factor 0.25
 }
 
 input type:keyboard {

@@ -1,20 +1,22 @@
 local M = {}
 
-M.mason = function()
-    require("mason").setup()
-end
+M.lazydev = {
+    library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    },
+}
 
-M.mason_lsp_config = function()
-    require("mason-lspconfig").setup({
-        ensure_installed = {
-            "lua_ls",
-            "pyright",
-            "clangd",
-            "jsonls",
-            "jdtls",
-        },
-    })
-end
+M.mason_lsp_config = {
+    ensure_installed = {
+        "lua_ls",
+        "pyright",
+        "clangd",
+        "jsonls",
+        "jdtls",
+    },
+}
 
 M.lsp_config = function()
     -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..

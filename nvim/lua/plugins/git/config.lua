@@ -1,9 +1,7 @@
 local M = {}
 
-M.gitsigns = function ()
-    require('gitsigns').setup({
-        current_line_blame = true
-    })
-end
+M.gitsigns = {
+	current_line_blame = true,
+}
 
 return M
