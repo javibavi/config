@@ -9,4 +9,8 @@ M.grug = function ()
     map("n", "<leader>r", "<cmd>GrugFar<CR>", {})
 end
 
+M.undo = function ()
+    map('n', '<leader>u', vim.cmd.UndotreeToggle)
+end
+
 return M

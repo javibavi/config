@@ -53,4 +53,14 @@ return {
 			mappings.grug()
 		end,
 	},
+    {
+        "mbbill/undotree",
+        opts = {},
+        init = function ()
+            settings.undo()
+        end,
+        config = function ()
+            mappings.undo()
+        end
+    }
 }

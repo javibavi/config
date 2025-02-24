@@ -1,65 +1,65 @@
 local settings = require("plugins.ui.config")
 local mappings = require("plugins.ui.mappings")
 return {
-	{
-		"romgrk/barbar.nvim",
-		init = function()
-			settings.barbar()
-		end,
-		config = function()
-			mappings.barbar()
-		end,
-	},
-	{
-		"Bekaboo/dropbar.nvim",
-		-- optional, but required for fuzzy finder support
-		dependencies = {
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "make",
-		},
-		config = function()
-			mappings.dropbar()
-		end,
-	},
-	{
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-		opts = settings.dash,
-		config = function()
-			mappings.dash()
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		opts = settings.lualine,
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			settings.noice()
-		end,
-	},
-	{
-		-- This is the colorscheme plugin
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
+    {
+        "romgrk/barbar.nvim",
+        init = function()
+            settings.barbar()
+        end,
+        config = function()
+            mappings.barbar()
+        end,
+    },
+    {
+        "Bekaboo/dropbar.nvim",
+        -- optional, but required for fuzzy finder support
+        dependencies = {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
+        },
+        config = function()
+            mappings.dropbar()
+        end,
+    },
+    {
+        "nvimdev/dashboard-nvim",
+        event = "VimEnter",
+        opts = settings.dash,
+        config = function()
+            mappings.dash()
+        end,
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        opts = settings.lualine,
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        config = function()
+            settings.noice()
+        end,
+    },
+    {
+        -- This is the colorscheme plugin
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
 
-		config = function()
-			settings.rosepine()
-		end,
-	},
-	{
-		"kevinhwang91/nvim-bqf",
-		ft = "qf",
-	},
+        config = function()
+            settings.rosepine()
+        end,
+    },
+    {
+        "kevinhwang91/nvim-bqf",
+        ft = "qf",
+    },
 }

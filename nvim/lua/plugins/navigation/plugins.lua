@@ -35,4 +35,11 @@ return {
 			mappings.aerial()
 		end,
 	},
+	{
+		"bassamsdata/namu.nvim",
+        opts = {},
+        config = function ()
+            mappings.namu()
+        end
+	},
 }

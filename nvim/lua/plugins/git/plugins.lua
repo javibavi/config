@@ -6,4 +6,28 @@ return {
 		"lewis6991/gitsigns.nvim",
 		opts = settings.gitsigns,
 	},
+	{
+		"sindrets/diffview.nvim",
+		opts = {},
+		config = function()
+			mappings.diffview()
+		end,
+	},
+	{
+		"akinsho/git-conflict.nvim",
+		version = "*",
+		opts = {},
+		config = function()
+			mappings.conflict()
+		end,
+	},
+	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = true,
+	},
 }

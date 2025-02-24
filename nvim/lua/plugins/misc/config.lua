@@ -32,8 +32,14 @@ M.glimmer = {
     },
 }
 
-M.grug = function ()
+M.grug = function()
     require("grug-far").setup({})
+end
+
+M.undo = function()
+    vim.g.undotree_WindowLayout = 4
+    vim.opt.undofile = true
+    vim.opt.undodir = vim.fn.expand("~/.undodir")
 end
 
 return M

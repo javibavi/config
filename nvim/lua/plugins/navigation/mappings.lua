@@ -11,4 +11,8 @@ M.aerial = function ()
     map("n", "<leader>a", "<cmd>AerialToggle<CR>")
 end
 
+M.namu = function ()
+    map("n", "<leader>t", ":Namu symbols<cr>")
+end
+
 return M

@@ -14,6 +14,7 @@ M.telescope = function()
 	map("n", "<leader>fn", "<cmd>Telescope notify<CR>", {})
 	map("n", "<leader>fq", "<cmd>Telescope quickfix<CR>", { })
 	map("n", "<leader>fl", "<cmd>Telescope loclist<CR>", { })
+	map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { })
 end
 
 return M
