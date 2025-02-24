@@ -40,5 +40,9 @@ M.neoscroll = {
     },
 }
 
+M.multicursor = function ()
+    require("multicursor-nvim").setup({})
+end
+
 
 return M

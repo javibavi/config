@@ -5,45 +5,45 @@ M.multicursor = function()
     local mc = require("multicursor-nvim")
 
     -- Add or skip cursor above/below the main cursor.
-    map({ "n", "v" }, "<up>", function()
+    map({ "n" }, "<up>", function()
         mc.lineAddCursor(-1)
     end)
-    map({ "n", "v" }, "<down>", function()
+    map({ "n" }, "<down>", function()
         mc.lineAddCursor(1)
     end)
-    map({ "n", "v" }, "<leader><up>", function()
+    map({ "n" }, "<leader><up>", function()
         mc.lineSkipCursor(-1)
     end)
-    map({ "n", "v" }, "<leader><down>", function()
+    map({ "n" }, "<leader><down>", function()
         mc.lineSkipCursor(1)
     end)
 
     -- Similar to the previous commands, but for matches
-    map({ "n", "x" }, "<leader>mn", function()
+    map({ "n" }, "<leader>mn", function()
         mc.matchAddCursor(1)
     end)
-    map({ "n", "x" }, "<leader>ms", function()
+    map({ "n" }, "<leader>ms", function()
         mc.matchSkipCursor(1)
     end)
-    map({ "n", "x" }, "<leader>mN", function()
+    map({ "n" }, "<leader>mN", function()
         mc.matchAddCursor(-1)
     end)
-    map({ "n", "x" }, "<leader>mS", function()
+    map({ "n" }, "<leader>mS", function()
         mc.matchSkipCursor(-1)
     end)
 
     -- Add all matches in the document
-    map({ "n", "v" }, "<leader>mA", mc.matchAllAddCursors)
+    map({ "n" }, "<leader>mA", mc.matchAllAddCursors)
 
     -- Rotate the main cursor.
-    map({ "n", "v" }, "<left>", mc.prevCursor)
-    map({ "n", "v" }, "<right>", mc.nextCursor)
+    map({ "n" }, "<left>", mc.prevCursor)
+    map({ "n" }, "<right>", mc.nextCursor)
 
     -- Add and remove cursors with control + left click.
     map("n", "<c-leftmouse>", mc.handleMouse)
 
     -- Easy way to add and remove cursors using the main cursor.
-    map({ "n", "v" }, "<c-q>", mc.toggleCursor)
+    map({ "n" }, "<c-q>", mc.toggleCursor)
 
     map("n", "<esc>", function()
         if not mc.cursorsEnabled() then

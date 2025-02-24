@@ -5,10 +5,12 @@ return {
     {
         "catgoose/nvim-colorizer.lua",
         opts = {},
+        event = "BufReadPre"
     },
     {
         "numToStr/Comment.nvim",
         opts = mappings.comment,
+        event = "BufReadPre"
     },
     {
         "ya2s/nvim-cursorline",
@@ -17,10 +19,11 @@ return {
     {
         "jake-stewart/multicursor.nvim",
         branch = "1.0",
-        opts = {},
         config = function()
+            settings.multicursor()
             mappings.multicursor()
         end,
+        event = "BufReadPre"
     },
     {
         "kylechui/nvim-surround",
@@ -30,6 +33,7 @@ return {
     {
         "folke/todo-comments.nvim",
         opts = {},
+        event = "BufReadPre"
     },
     {
         "karb94/neoscroll.nvim",
@@ -38,7 +42,7 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        event = "InsertEnter",
+        event = "BufReadPre",
         opts = {},
     },
 }
