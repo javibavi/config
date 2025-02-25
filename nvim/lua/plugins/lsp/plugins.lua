@@ -32,4 +32,10 @@ return {
             settings.rustacean()
         end,
     },
+    {
+        "kosayoda/nvim-lightbulb",
+        config = function()
+            settings.lightbulb()
+        end,
+    },
 }

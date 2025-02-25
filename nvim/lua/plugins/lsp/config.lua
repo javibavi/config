@@ -57,4 +57,10 @@ M.rustacean = function()
     }
 end
 
+M.lightbulb = function()
+    require("nvim-lightbulb").setup({
+        autocmd = { enabled = true },
+    })
+end
+
 return M

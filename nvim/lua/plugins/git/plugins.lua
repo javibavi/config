@@ -5,7 +5,6 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = settings.gitsigns,
-        event = "BufReadPre",
 	},
 	{
 		"sindrets/diffview.nvim",

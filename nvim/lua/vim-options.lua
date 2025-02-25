@@ -5,6 +5,7 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+vim.o.updatetime = 1000
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

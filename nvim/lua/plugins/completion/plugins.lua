@@ -9,7 +9,7 @@ return {
     },
     {
         "windwp/nvim-autopairs",
-        event = "BufReadPre",
+        event = "InsertEnter",
         config = true,
     },
     {
