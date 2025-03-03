@@ -3,7 +3,7 @@ local M = {}
 local map = vim.keymap.set
 
 M.nvimtree = function()
-	map("n", "<leader>n", "<cmd>NvimTreeToggle <CR>", { noremap = true, silent = true })
+	map("n", "<leader>t", "<cmd>NvimTreeToggle <CR>", { noremap = true, silent = true })
 end
 
 M.telescope = function()

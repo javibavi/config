@@ -37,8 +37,8 @@ return {
 	},
 	{
 		"bassamsdata/namu.nvim",
-        opts = {},
         config = function ()
+            settings.namu()
             mappings.namu()
         end
 	},

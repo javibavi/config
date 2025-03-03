@@ -12,7 +12,7 @@ M.aerial = function ()
 end
 
 M.namu = function ()
-    map("n", "<leader>t", ":Namu symbols<cr>")
+    map("n", "<leader>n", ":Namu symbols<cr>")
 end
 
 return M

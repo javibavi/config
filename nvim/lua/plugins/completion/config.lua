@@ -37,7 +37,7 @@ M.blink = {
         min_keyword_length = function(ctx)
             -- only applies when typing a command, doesn't apply to arguments
             if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
-                return 2
+                return 3
             end
             return 0
         end,
@@ -49,8 +49,8 @@ M.blink = {
         ["<C-e>"] = { "hide", "fallback" },
         ["<CR>"] = { "accept", "fallback" },
 
-        ["<Tab>"] = { "select_next", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 
         ["<Up>"] = { "snippet_backward", "fallback" },
         ["<Down>"] = { "snippet_forward", "fallback" },
@@ -84,5 +84,115 @@ M.blink = {
         },
     },
 }
+
+M.copilot = function()
+    require("copilot").setup({
+        panel = {
+            enabled = true,
+            auto_refresh = true,
+            keymap = {
+                jump_prev = "[[",
+                jump_next = "]]",
+                accept = "<CR>",
+                refresh = "gr",
+                open = "<M-CR>",
+            },
+            layout = {
+                position = "bottom", -- | top | left | right | horizontal | vertical
+                ratio = 0.4,
+            },
+        },
+        suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            hide_during_completion = true,
+            debounce = 75,
+            keymap = {
+                accept = "<C-a>",
+                accept_word = false,
+                accept_line = false,
+                next = "<M-n>",
+                prev = "<M-p>",
+                dismiss = "<M-space>",
+            },
+        },
+        filetypes = {
+            yaml = false,
+            markdown = false,
+            help = false,
+            gitcommit = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+        },
+        copilot_node_command = "node", -- Node.js version must be > 18.x
+        server_opts_overrides = {},
+    })
+end
+
+M.chat = function()
+    require("CopilotChat").setup({
+
+        -- Shared config starts here (can be passed to functions at runtime and configured via setup function)
+
+        model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
+        agent = "copilot",     -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
+        -- default mappings
+        -- see config/mappings.lua for implementation
+        mappings = {
+            complete = {
+                insert = "<Tab>",
+            },
+            close = {
+                normal = "q",
+                insert = "<C-c>",
+            },
+            reset = {
+                normal = "<C-,>",
+                insert = "<C-,>",
+            },
+            submit_prompt = {
+                normal = "<CR>",
+                insert = "<C-s>",
+            },
+            toggle_sticky = {
+                detail = "Makes line under cursor sticky or deletes sticky line.",
+                normal = "gr",
+            },
+            accept_diff = {
+                normal = "<C-y>",
+                insert = "<C-y>",
+            },
+            jump_to_diff = {
+                normal = "gj",
+            },
+            quickfix_answers = {
+                normal = "gqa",
+            },
+            quickfix_diffs = {
+                normal = "gqd",
+            },
+            yank_diff = {
+                normal = "gy",
+                register = '"', -- Default register to use for yanking
+            },
+            show_diff = {
+                normal = "gd",
+                full_diff = false, -- Show full diff instead of unified diff when showing diff window
+            },
+            show_info = {
+                normal = "gi",
+            },
+            show_context = {
+                normal = "gc",
+            },
+            show_help = {
+                normal = "gh",
+            },
+        },
+    })
+end
 
 return M

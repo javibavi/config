@@ -19,7 +19,7 @@ M.whichkey = function()
 		{ "<leader>ft", desc = "Todo", mode = "n", icon = "" },
 
 		-- NvimTree
-		{ "<leader>n", desc = "Toggle NvimTree", mode = "n", icon = "" },
+		{ "<leader>t", desc = "Toggle NvimTree", mode = "n", icon = "" },
 
 		-- Aerial
 		{ "<leader>a", desc = "Toggle Aerial", mode = "n", icon = "" },
@@ -34,15 +34,15 @@ M.whichkey = function()
 		{ "<leader>bd", desc = "Order Buffers By Directory", mode = "n", icon = "" },
 		{ "<leader>bw", desc = "Order Buffers By Window Number", mode = "n", icon = "" },
 
-        -- Dropbar
+		-- Dropbar
 		{ "<leader>;", desc = "Pick Symbols In Winbar", mode = "n", icon = "󰆾" },
 		{ "[;", desc = "Go to start of current context", mode = "n", icon = "󰁔" },
 		{ "];", desc = "Select next context", mode = "n", icon = "󰁚" },
 
-        -- Dashboard
+		-- Dashboard
 		{ "<leader>h", desc = "Dashboard", mode = "n", icon = "" },
 
-        -- LSP
+		-- LSP
 		{ "g", group = "LSP", desc = "LSP", icon = "" },
 		{ "gd", desc = "Go To Definition", mode = "n", icon = "" },
 		{ "gf", desc = "Format File", mode = "n", icon = "" },
@@ -53,7 +53,7 @@ M.whichkey = function()
 		{ "gs", desc = "Go To Signature Help", mode = "n", icon = "" },
 		{ "gR", desc = "Rename Throughout Buffer", mode = "n", icon = "" },
 
-        -- Git
+		-- Git
 		{ "<leader>g", group = "Git", desc = "Git", icon = "" },
 		{ "<leader>gd", desc = "Open Git Diff View", mode = "n", icon = "" },
 		{ "<leader>gD", desc = "Close Git Diff View", mode = "n", icon = "" },
@@ -64,17 +64,17 @@ M.whichkey = function()
 		{ "<leader>g3", desc = "Use Both Versions", mode = "n", icon = "" },
 		{ "<leader>g0", desc = "Use None Of The Versions", mode = "n", icon = "" },
 
-        -- Undo and Grug
+		-- Undo and Grug
 		{ "<leader>r", desc = "Toggle Grug Far", mode = "n", icon = "" },
 		{ "<leader>u", desc = "Toggle UndoTree", mode = "n", icon = "" },
 
-        -- Namu
-		{ "<leader>t", desc = "Open Namu (Fuzzy Tree Finder)", mode = "n", icon = "" },
+		-- Namu
+		{ "<leader>n", desc = "Open Namu (Fuzzy Tree Finder)", mode = "n", icon = "" },
 
-        -- Treesj
+		-- Treesj
 		{ "<leader>s", desc = "Toggle Split/Join Of Node", mode = "n", icon = "" },
 
-        -- Multicursor
+		-- Multicursor
 		{ "<leader>m", group = "Multicursor", desc = "Multicursor", icon = "" },
 		{ "<leader>mn", desc = "New Cursor At Next Match", mode = "n", icon = "" },
 		{ "<leader>ms", desc = "Skip Cursor At Next Match", mode = "n", icon = "" },
@@ -90,8 +90,23 @@ M.whichkey = function()
 		{ "<up>", desc = "Skip Cursor Above", mode = "n", icon = "" },
 		{ "<down>", desc = "Skip Cursor Below", mode = "n", icon = "" },
 
-        -- Quickfix
+		-- Quickfix
 		{ "<leader>q", group = "Quickfix", desc = "Quickfix" },
+
+		-- CopilotChat
+		{ "<leader>c", group = "CopilotChat", desc = "CopilotChat", icon = "" },
+		{ "<leader>cc", desc = "Toggle CopilotChat", mode = "n", icon = "󱚣" },
+		{ "<leader>cs", desc = "Stop CopilotChat Output", mode = "n", icon = "󰙦" },
+		{ "<leader>cr", desc = "Reset CopilotChat", mode = "n", icon = "󰜉" },
+		{ "<leader>cp", desc = "CopilotChat Prompts", mode = "n", icon = "󰘿" },
+		{ "<leader>cm", desc = "CopilotChat Models", mode = "n", icon = "󱙺" },
+		{ "<leader>ce", desc = "CopilotChat Explain", mode = { "n", "v" }, icon = "󰑴" },
+		{ "<leader>cC", desc = "CopilotChat Commit", mode = { "n", "v" }, icon = "󰜘" },
+		{ "<leader>cd", desc = "CopilotChat Docs", mode = { "n", "v" }, icon = "󰈙" },
+		{ "<leader>cf", desc = "CopilotChat Fix", mode = { "n", "v" }, icon = "󰦒" },
+		{ "<leader>ct", desc = "CopilotChat Tests", mode = { "n", "v" }, icon = "󰙨" },
+		{ "<leader>co", desc = "CopilotChat Optimize", mode = { "n", "v" }, icon = "󰁨" },
+		{ "<leader>ci", desc = "CopilotChat Inject", mode = "v", icon = "󰋊" },
 	})
 end
 
