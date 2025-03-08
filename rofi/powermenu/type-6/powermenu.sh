@@ -70,7 +70,7 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend;
 		elif [[ $1 == '--logout' ]]; then
-            loginctl terminate-session $XDG_SESSION_ID
+            swaymsg exit
 		fi
 	else
 		exit 0
@@ -90,7 +90,7 @@ case ${chosen} in
         ~/.config/scripts/snapshot.sh
         ;;
     $lock)
-        hyprlock
+        loginctl lock-session
         ;;
     $suspend)
 		run_cmd --suspend
