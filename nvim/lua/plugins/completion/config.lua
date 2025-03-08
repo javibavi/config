@@ -104,7 +104,7 @@ M.copilot = function()
         },
         suggestion = {
             enabled = true,
-            auto_trigger = true,
+            auto_trigger = false,
             hide_during_completion = true,
             debounce = 75,
             keymap = {

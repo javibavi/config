@@ -46,10 +46,23 @@ M.rustacean = function()
                 -- you can also put keymaps in here
                 local capabilities = require("cmp_nvim_lsp").default_capabilities()
                 client.server_capabilities = vim.tbl_deep_extend("force", client.server_capabilities, capabilities)
+
+                -- Optional: Set updatetime to control diagnostic update frequency
+                vim.opt.updatetime = 300
             end,
             default_settings = {
                 -- rust-analyzer language server configuration
-                ["rust-analyzer"] = {},
+                ["rust-analyzer"] = {
+                    checkOnSave = {
+                        command = "check", -- Using standard 'check' instead of 'clippy'
+                    },
+                    diagnostics = {
+                        enable = true,
+                        experimental = {
+                            enable = true,
+                        },
+                    },
+                },
             },
         },
         -- DAP configuration
