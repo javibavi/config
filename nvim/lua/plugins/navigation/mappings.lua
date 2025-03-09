@@ -1,5 +1,6 @@
 local M = {}
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 M.leap = function()
 	map("n", "s", "<Plug>(leap)")
@@ -8,11 +9,11 @@ M.leap = function()
 end
 
 M.aerial = function ()
-    map("n", "<leader>a", "<cmd>AerialToggle<CR>")
+    map("n", "<leader>a", "<cmd>AerialToggle<CR>", opts)
 end
 
 M.namu = function ()
-    map("n", "<leader>n", ":Namu symbols<cr>")
+    map("n", "<leader>n", ":Namu symbols<cr>", opts)
 end
 
 return M

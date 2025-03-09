@@ -1,5 +1,6 @@
 local M = {}
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 M.multicursor = function()
     local mc = require("multicursor-nvim")
