@@ -54,8 +54,8 @@ M.blink = {
 
         ["<Up>"] = { "snippet_backward", "fallback" },
         ["<Down>"] = { "snippet_forward", "fallback" },
-        ["<C-p>"] = { "select_prev", "fallback" },
-        ["<C-n>"] = { "select_next", "fallback" },
+        ["<C-p>"] = {},
+        ["<C-n>"] = {},
 
         ["<C-b>"] = { "scroll_documentation_up", "fallback" },
         ["<C-f>"] = { "scroll_documentation_down", "fallback" },
@@ -111,9 +111,9 @@ M.copilot = function()
                 accept = "<C-a>",
                 accept_word = false,
                 accept_line = false,
-                next = "<M-n>",
-                prev = "<M-p>",
-                dismiss = "<M-space>",
+                next = "<C-n>",
+                prev = "<C-p>",
+                dismiss = "<C-BS>",
             },
         },
         filetypes = {
@@ -162,8 +162,8 @@ M.chat = function()
                 normal = "gr",
             },
             accept_diff = {
-                normal = "<C-y>",
-                insert = "<C-y>",
+                normal = "<C-a>",
+                insert = "<C-a>",
             },
             jump_to_diff = {
                 normal = "gj",
