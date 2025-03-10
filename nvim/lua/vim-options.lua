@@ -19,6 +19,7 @@ vim.diagnostic.config({
 
 -- Sets the leader key to space
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 local signs = { Error = "●", Warn = "●", Hint = "●", Info = "●" }
 

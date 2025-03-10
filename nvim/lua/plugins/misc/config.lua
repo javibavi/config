@@ -12,7 +12,7 @@ M.whichkey = function()
 		{ "<leader>fh", desc = "Help Tags", mode = "n", icon = "" },
 		{ "<leader>fn", desc = "Notifications", mode = "n", icon = "" },
 		{ "<leader>fx", desc = "Trouble", mode = "n", icon = "" },
-		{ "<leader>fs", desc = "Substitute", mode = "n", icon = "" },
+		{ "<leader>fs", desc = "Substitute", mode = { "n", "v" }, icon = "" },
 		{ "<leader>fa", desc = "Code Action", mode = "n", icon = "" },
 		{ "<leader>fq", desc = "Quickfix", mode = "n", icon = "" },
 		{ "<leader>fl", desc = "Loclist", mode = "n", icon = "" },
@@ -94,7 +94,7 @@ M.whichkey = function()
 		{ "<leader>q", group = "Quickfix", desc = "Quickfix" },
 
 		-- CopilotChat
-		{ "<leader>c", group = "CopilotChat", desc = "CopilotChat", icon = "" },
+		{ "<leader>c", group = "CopilotChat", mode = { "n", "v" }, desc = "CopilotChat", icon = "" },
 		{ "<leader>cc", desc = "Toggle CopilotChat", mode = "n", icon = "󱚣" },
 		{ "<leader>cs", desc = "Stop CopilotChat Output", mode = "n", icon = "󰙦" },
 		{ "<leader>cr", desc = "Reset CopilotChat", mode = "n", icon = "󰜉" },
@@ -120,7 +120,10 @@ M.glimmer = {
 }
 
 M.grug = function()
-	require("grug-far").setup({})
+	require("grug-far").setup({
+		startInInsertMode = false,
+		windowCreationCommand = "botright vsplit",
+	})
 end
 
 M.undo = function()
