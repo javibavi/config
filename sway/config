@@ -25,7 +25,7 @@ exec autotiling
 exec ~/.config/waybar/scripts/launch.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon
-exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/spiderman.png
+exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/city.jpg
 exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/powersync.sh & ~/.config/scripts/hyprsync.sh ~/.config/scripts/launchersync.sh"
 exec swaync & hypridle
 exec wl-paste --type text --watch cliphist store

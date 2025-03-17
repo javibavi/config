@@ -44,15 +44,15 @@ window#waybar {
 }
 
 #workspaces button {
-    color: @iris;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     margin: 0px 0px;
     border-radius: 0 30px 30px 0;
     padding: 4px 4px 4px 4px;
 }
 
 #workspaces button:hover {
-    color: @rose;
+    color: @love;
     box-shadow: none;
     /* Remove predefined box-shadow */
     text-shadow: none;
@@ -63,13 +63,13 @@ window#waybar {
 }
 
 #workspaces button:hover * {
-    color: @rose;
-    background-color: @base;
+    color: @love;
+    background-color: @iris;
     border-radius: 0 30px 30px 0;
 }
 
 #workspaces * {
-    color: @iris;
+    color: @base;
     border-radius: 0 30px 30px 0;
     font-size: 23.5px;
     margin-right: 4px;
@@ -77,7 +77,7 @@ window#waybar {
 
 #workspaces {
     border-style: solid;
-    background-color: @base;
+    background-color: @iris;
     opacity: 1;
     border-radius: 0 30px 30px 0;
     margin: 8px 0px 8px 0px;
@@ -85,12 +85,12 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: @iris;
+    color: @love;
     /* background-color: @rose; */
 }
 
 #workspaces button.focused * {
-    color: @rose;
+    color: @love;
 }
 
 
@@ -113,7 +113,7 @@ window#waybar {
 #custom-scratchpad-indicator {
     padding: 5px 8px;
     border-style: solid;
-    background-color: shade(@base, 1);
+    /* background-color: shade(@base, 1); */
     opacity: 1;
     margin: 8px 0;
 }
@@ -123,6 +123,7 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 #tray {
     border-radius: 0px 0px 0px 0px;
+    background-color: shade(@iris, 1);
 }
 
 #custom-cava-internal {
@@ -134,8 +135,8 @@ window#waybar {
 
 #clock {
     /* background-color:#a3be8c; */
-    background-color: @base;
-    color: @foam;
+    background-color: @iris;
+    color: @base;
     border-radius: 30px;
     margin: 8px 10px;
     margin-left: 5px;
@@ -143,7 +144,7 @@ window#waybar {
 }
 
 #backlight {
-    color: @gold;
+    color: @iris;
     background-color: @base;
     /* border-bottom: 2px solid @gold; */
     border-radius: 30px 0 0 30px;
@@ -194,38 +195,38 @@ window#waybar {
 }
 
 #network.disabled {
-    color: @love;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     /* border-bottom: 2px solid #bf616a; */
 }
 
 #network {
-    color: @pine;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     /* border-bottom: 2px solid @green; */
     border-radius: 30 0 0 30;
 }
 
 #network.disconnected {
-    color: @love;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     /* border-bottom: 2px solid #bf616a; */
 }
 
 #pulseaudio {
-    color: @rose;
+    color: @iris;
     background-color: @base;
     /* border-bottom: 2px solid @rose; */
 }
 
 #pulseaudio.muted {
-    color: @muted;
+    color: @iris;
     background-color: @base;
     /* border-bottom: 2px solid #3b4252; */
 }
 
 #temperature {
-    color: @pine;
+    color: @iris;
     /* border-bottom: 2px solid @teal; */
     border-radius: 30px 0 0 30px;
 }
@@ -240,8 +241,8 @@ window#waybar {
 #custom-power {}
 
 #custom-launcher {
-    background-color: @base;
-    color: @iris;
+    background-color: @iris;
+    color: @base;
     border-radius: 30px 0px 0px 30px;
     font-size: 25px;
     margin-left: 10px;
@@ -249,8 +250,8 @@ window#waybar {
 }
 
 #custom-power {
-    color: @iris;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     border-radius: 0 30px 30px 0;
     margin-right: 10px;
 }
@@ -280,16 +281,16 @@ window#waybar {
 }
 
 #custom-notification {
-    color: @rose;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     /* border-bottom: 2px solid @peach; */
     border-radius: 0px 0px 0px 0px;
     margin: 8px 0px;
 }
 
 #custom-scratchpad-indicator{
-    color: @foam;
-    background-color: @base;
+    color: @base;
+    background-color: @iris;
     /* border-bottom: 2px solid @peach; */
     border-radius: 0px 0px 0px 0px;
     margin: 8px 0px;
