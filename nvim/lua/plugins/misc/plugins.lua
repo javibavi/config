@@ -62,5 +62,8 @@ return {
         config = function ()
             mappings.undo()
         end
+    },
+    {
+        "lambdalisue/vim-suda",
     }
 }

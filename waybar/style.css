@@ -290,7 +290,7 @@ window#waybar {
 
 #custom-scratchpad-indicator{
     color: @base;
-    background-color: @foam;
+    background-color: @iris;
     /* border-bottom: 2px solid @peach; */
     border-radius: 0px 0px 0px 0px;
     margin: 8px 0px;

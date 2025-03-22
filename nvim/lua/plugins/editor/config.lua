@@ -44,5 +44,18 @@ M.multicursor = function ()
     require("multicursor-nvim").setup({})
 end
 
+M.ibl = {
+    exclude = {
+        filetypes = {
+            "lspinfo",
+            "dashboard",
+            "checkhealth",
+            "help",
+            "man",
+            "dashboard",
+        }
+    }
+}
+
 
 return M
