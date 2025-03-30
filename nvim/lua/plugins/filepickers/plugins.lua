@@ -20,8 +20,4 @@ return {
 			mappings.telescope()
 		end,
 	},
-	{
-		-- This is a plugin to allow our code options to come up as a nice ui
-		"nvim-telescope/telescope-ui-select.nvim",
-	},
 }
