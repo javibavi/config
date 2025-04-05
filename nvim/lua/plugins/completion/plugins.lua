@@ -3,11 +3,6 @@ local mappings = require("plugins.completion.mappings")
 
 return {
 	{
-		-- Literally just need this so that rustaceanvim stops whining
-		"hrsh7th/cmp-nvim-lsp",
-		ft = "rust",
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
@@ -17,14 +12,6 @@ return {
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 		},
-	},
-	{
-		"saghen/blink.compat",
-		-- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-		version = "*",
-		-- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-		lazy = true,
-		opts = {},
 	},
 	{
 		"saghen/blink.cmp",

@@ -20,17 +20,7 @@ M.blink = {
         default = {
             "lsp",
             "path",
-            "rustaceanvim",
             "snippets",
-        },
-
-        -- Setup rustaceanvim as a compatible source
-        providers = {
-            rustaceanvim = {
-                name = "rustaceanvim",
-                module = "blink.compat.source",
-                score_offset = -3,
-            },
         },
 
         -- Get rid of commandline completion when input is short

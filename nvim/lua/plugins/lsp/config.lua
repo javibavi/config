@@ -42,9 +42,10 @@ M.rustacean = function()
         tools = {},
         -- LSP configuration
         server = {
-            on_attach = function(client, bufnr)
+            on_attach = function(client, _)
                 -- you can also put keymaps in here
-                local capabilities = require("cmp_nvim_lsp").default_capabilities()
+                -- Get capabilities directly from blink.cmp instead of cmp_nvim_lsp
+                local capabilities = require("blink.cmp").get_lsp_capabilities()
                 client.server_capabilities = vim.tbl_deep_extend("force", client.server_capabilities, capabilities)
 
                 -- Optional: Set updatetime to control diagnostic update frequency
