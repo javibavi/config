@@ -53,17 +53,21 @@ return {
 			mappings.grug()
 		end,
 	},
-    {
-        "mbbill/undotree",
-        opts = {},
-        init = function ()
-            settings.undo()
-        end,
-        config = function ()
-            mappings.undo()
-        end
-    },
-    {
-        "lambdalisue/vim-suda",
-    }
+	{
+		"mbbill/undotree",
+		opts = {},
+		init = function()
+			settings.undo()
+		end,
+		config = function()
+			mappings.undo()
+		end,
+	},
+	{
+		"lambdalisue/vim-suda",
+	},
+	{
+		"dundalek/bloat.nvim",
+		cmd = "Bloat",
+	},
 }

@@ -52,8 +52,8 @@ workspace 10 output HDMI-A-1
 
 # Set borders and gaps
 default_border pixel 4
-gaps inner 15
-gaps outer 10
+gaps inner 10
+gaps outer 5
 
 ### Input Devices
 input "1267:12817:ASUE1211:00_04F3:3211_Touchpad" {
