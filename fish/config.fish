@@ -3,6 +3,6 @@ if status is-interactive
 
     fish_config theme choose "Rosé Pine Moon"
     set fish_greeting
-    neofetch
+    fastfetch
     starship init fish | source
 end
