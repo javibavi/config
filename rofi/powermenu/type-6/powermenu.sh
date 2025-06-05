@@ -16,7 +16,7 @@ theme='style-1'
 # CMDs
 lastlogin="`last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7`"
 uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+host="zenbook"
 
 # Options
 screenshot='🖻'
@@ -31,8 +31,8 @@ no=''
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p " $USER@$host" \
-		-mesg " Uptime: $uptime" \
+		-p "$USER@$host" \
+		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
