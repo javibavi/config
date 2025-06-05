@@ -20,13 +20,13 @@ host=`hostname`
 
 # Options
 screenshot='🖻'
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=''
+reboot='↻'
+lock=''
+suspend=''
+logout='⎋'
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {

@@ -80,9 +80,9 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
         },
-        "format": " {:%a %d %b  %I:%M %p}", //12 hour format
+        "format": "{:%a %d %b %I:%M %p}", //12 hour format
         // "format": " {:%d %m %Y  %H:%M}",	//24 hour format
-        "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
+        "format-alt": "{:%d/%m/%Y %H:%M:%S}",
         // //"timezones": [ "Kolkata" ],
         // //"max-length": 200
         "interval": 1
@@ -161,7 +161,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format": "⏾ ",
+        "format": "⏾",
         "on-click": "~/.config/rofi/powermenu/type-6/powermenu.sh",
         "tooltip": false
     },
@@ -169,7 +169,7 @@
         "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
         // Interval set only as a fallback, as the value is updated by signal
         "interval": 1,
-        "format": "{} ", // Icon: keyboard
+        "format": "{}  ", // Icon: keyboard
         // Signal sent by Sway key binding (~/.config/sway/key-bindings)
         "signal": 1, // SIGHUP
         "tooltip": false

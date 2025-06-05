@@ -18,7 +18,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec export XDG_CURRENT_DESKTOP=sway
 
 ### Outputs
-output eDP-1 resolution 1920x1200 position 1280,0
+output eDP-1 resolution 2880x1800 scale 2 position 1280,0
 output HDMI-A-1 resolution 1280x1024 position 0,0
 
 exec autotiling
@@ -56,7 +56,7 @@ gaps inner 10
 gaps outer 5
 
 ### Input Devices
-input "1267:12817:ASUE1211:00_04F3:3211_Touchpad" {
+input type:touchpad {
     left_handed disabled
     tap enabled
     natural_scroll enabled
@@ -168,9 +168,6 @@ for_window [class="jetbrains-studio"] blur true, opacity set 0.85
 for_window [class="swaync"] blur true, opacity set 0.9
 for_window [app_id="fum_"] floating enable,resize set 300 480, move position 789 -30
 
-shadows enable
-shadow_color #000000
-shadow_blur_radius 40
 
 ### Include Additional Configs
 include @sysconfdir@/sway/config.d/*

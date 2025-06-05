@@ -23,9 +23,9 @@ return {
     },
     {
         "nvimdev/dashboard-nvim",
-        event = "VimEnter",
-        opts = settings.dash,
+        -- event = "VimEnter",
         config = function()
+            settings.dash()
             mappings.dash()
         end,
     },
