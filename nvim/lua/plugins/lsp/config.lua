@@ -15,6 +15,7 @@ M.mason_lsp_config = {
         "clangd",
         "jsonls",
         "jdtls",
+        "cssls",
     },
 }
 
@@ -34,6 +35,7 @@ M.lsp_config = function()
     })
     lspconfig.jsonls.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
+    lspconfig.cssls.setup({ capabilities = capabilities })
 end
 
 M.rustacean = function()

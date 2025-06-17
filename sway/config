@@ -25,7 +25,7 @@ exec autotiling
 exec ~/.config/waybar/scripts/launch.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon
-exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/city.jpg
+exec swww-daemon & swww img /home/javi_bavi/.config/wallpapers/city-rosepien.jpg
 exec --no-startup-id bash -c "sleep 5; ~/.config/scripts/powersync.sh & ~/.config/scripts/hyprsync.sh ~/.config/scripts/launchersync.sh"
 exec swaync & hypridle
 exec wl-paste --type text --watch cliphist store
@@ -33,8 +33,8 @@ exec wl-paste --type image --watch cliphist store
 
 ### Appearance
 client.focused #C4A7E7 #C4A7E7 #C4A7E7 #C4A7E7
-client.focused_inactive #EA9A97 #EA9A97 #EA9A97 #EA9A97
-client.unfocused #EA9A97 #EA9A97 #EA9A97 #EA9A97
+client.focused_inactive #eb6f92 #eb6f92 #eb6f92 #eb6f92
+client.unfocused #eb6f92 #eb6f92 #eb6f92 #eb6f92
 
 
 workspace 1 output eDP-1
@@ -140,7 +140,7 @@ bindgesture swipe:left workspace next
 
 # Utilities
 bindsym --locked Print exec grim
-bindsym $mod+s exec /home/javi_bavi/.config/scripts/snapshot.sh
+bindsym $mod+s exec hyprshot -m region -o ~/Pictures/Screenshots/
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%

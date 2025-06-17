@@ -63,7 +63,8 @@ window#waybar {
     color: @iris;
     border-radius: 10px 10px 10px 10px;
     font-size: 18.5px;
-    margin-right: 4px;
+    margin-left:2px;
+    margin-right:2px;
 }
 
 #workspaces {

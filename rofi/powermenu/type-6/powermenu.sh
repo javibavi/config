@@ -87,8 +87,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $screenshot)
-        ~/.config/scripts/snapshot.sh
-        ;;
+        hyprshot -m region -o ~/Pictures/Screenshots/        ;;
     $lock)
         loginctl lock-session
         ;;
