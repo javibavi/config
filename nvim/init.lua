@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 -- Setup lazy.nvim
 require("lazy").setup({
+	require("plugins.treesitter.plugins"),
 	require("plugins.completion.plugins"),
     require("plugins.diagnostics.plugins"),
 	require("plugins.editor.plugins"),
@@ -26,6 +27,5 @@ require("lazy").setup({
 	require("plugins.lsp.plugins"),
 	require("plugins.misc.plugins"),
 	require("plugins.navigation.plugins"),
-	require("plugins.treesitter.plugins"),
 	require("plugins.ui.plugins"),
 })

@@ -6,6 +6,9 @@ return {
         -- Package for better syntax highlighting
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        dependencies = {
+            "OXY2DEV/markview.nvim"
+        },
         config = function()
             settings.treesitter()
         end,

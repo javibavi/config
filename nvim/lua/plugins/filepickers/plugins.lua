@@ -13,8 +13,7 @@ return {
 	{
 		-- Telescope is a plugin used to grep through files
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		-- dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			settings.telescope()
 			mappings.telescope()
