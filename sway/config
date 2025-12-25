@@ -18,7 +18,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec export XDG_CURRENT_DESKTOP=sway
 
 ### Outputs
-output eDP-1 resolution 2880x1800 scale 2 position 1280,0
+output eDP-1 resolution 2880x1800@60Hz scale 2 position 1280,0
 output HDMI-A-1 resolution 1280x1024 position 0,0
 
 exec autotiling
@@ -69,6 +69,7 @@ input type:touchpad {
 input type:keyboard {
     xkb_layout us,latam
     xkb_options grp:win_space_toggle
+    xkb_options caps:swapescape
 }
 
 

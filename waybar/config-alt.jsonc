@@ -10,7 +10,6 @@
         "custom/launcher",
         "clock",
         "custom/keyboard-layout",
-        "custom/cava-internal",
     ],
     "modules-center": [
         "sway/workspaces",
@@ -18,7 +17,6 @@
         "tray"
     ],
     "modules-right": [
-        "custom/playerctl",
         "backlight",
         "pulseaudio",
         "battery",
