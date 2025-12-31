@@ -68,8 +68,7 @@ input type:touchpad {
 
 input type:keyboard {
     xkb_layout us,latam
-    xkb_options grp:win_space_toggle
-    xkb_options caps:swapescape
+    xkb_options grp:win_space_toggle,caps:swapescape
 }
 
 

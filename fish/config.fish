@@ -5,4 +5,7 @@ if status is-interactive
     set fish_greeting
     fastfetch --color "#C4A7E7" --logo-color-1 "#3E8FB0" --logo-color-2 "#3E8FB0"
     starship init fish | source
+    function nvm
+        bash -c "source /usr/share/nvm/init-nvm.sh; nvm $argv"
+    end
 end
