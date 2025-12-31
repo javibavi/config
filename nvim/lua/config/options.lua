@@ -10,12 +10,15 @@ vim.opt.signcolumn = "yes:1"
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 
 vim.opt.smartindent = false
 vim.opt.spell = true
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.undodir")
 
 vim.diagnostic.config({
-    virtual_text = false,
+	virtual_text = false,
 })
 
 -- Sets the leader key to space
@@ -25,10 +28,9 @@ vim.g.maplocalleader = "\\"
 local signs = { Error = "●", Warn = "●", Hint = "●", Info = "●" }
 
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-
 
 -- General mappings for the quickfix
 local map = vim.keymap.set
