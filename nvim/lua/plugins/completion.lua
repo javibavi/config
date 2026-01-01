@@ -4,6 +4,7 @@ return {
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
 		dependencies = { "rafamadriz/friendly-snippets" },
+        event = "BufReadPre",
 		opts = {
 			-- Enabling the signature highlights
 			signature = {
