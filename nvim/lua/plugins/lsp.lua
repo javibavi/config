@@ -1,22 +1,23 @@
 return {
 	{
-		-- Plugin that allows for easy installation of LSPs
 		"mason-org/mason.nvim",
+        cmd = {"MasonInstall", "Mason", "MasonUpdate"},
 		opts = {},
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {},
+		dependencies = { "neovim/nvim-lspconfig" },
+        event = {"BufReadPre", "BufNewFile"},
+		opts = {
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+			},
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
-		config = function()
-			require("mason-lspconfig").setup({
-				function(server_name)
-					vim.lsp.enable(server_name)
-				end,
-			})
-		end,
 	},
 	{
 		"folke/lazydev.nvim",
@@ -31,7 +32,7 @@ return {
 	},
 	{
 		"kosayoda/nvim-lightbulb",
-        event = "BufReadPre",
+		event = "BufReadPre",
 		opts = {
 			autocmd = { enabled = true },
 		},

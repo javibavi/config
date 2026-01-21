@@ -2,35 +2,33 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
-		event = "InsertEnter",
+		event = "BufReadPost",
+		keys = {
+			{
+				"<C-n>",
+				function()
+					local suggestion = require("copilot.suggestion")
+					suggestion.next()
+				end,
+				mode = "i",
+				desc = "Copilot: trigger or next",
+			},
+		},
 		config = function()
 			require("copilot").setup({
 				panel = {
-					enabled = true,
-					auto_refresh = true,
-					keymap = {
-						jump_prev = "[[",
-						jump_next = "]]",
-						accept = "<CR>",
-						refresh = "gr",
-						open = "<M-CR>",
-					},
-					layout = {
-						position = "bottom", -- | top | left | right | horizontal | vertical
-						ratio = 0.4,
-					},
+					enabled = false,
 				},
 				suggestion = {
 					enabled = true,
 					auto_trigger = false,
 					hide_during_completion = true,
-					trigger_on_accept = true,
 					debounce = 75,
+					trigger_on_accept = false,
 					keymap = {
 						accept = "<C-a>",
 						accept_word = false,
 						accept_line = false,
-						next = "<C-n>",
 						prev = "<C-p>",
 						dismiss = "<C-BS>",
 					},
@@ -75,8 +73,26 @@ return {
 
 			-- Shared config starts here (can be passed to functions at runtime and configured via setup function)
 
-			model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
-			agent = "copilot", -- Default agent to use, see ':CopilotChatAgents' for available agents (can be specified manually in prompt via @).
+			model = "gpt-4.1", -- Default model to use
+			agent = "copilot", -- Default agent to use
+			resources = "buffer",
+			temperature = 0.1,
+			window = {
+				layout = "vertical",
+                position = "right",
+				width = 0.4,
+				title = "🤖 AI Assistant",
+			},
+
+			headers = {
+				user = "👤 You",
+				assistant = "🤖 Copilot",
+				tool = "🔧 Tool",
+			},
+
+			separator = "━━",
+			auto_fold = true, -- Automatically folds non-assistant messages
+
 			-- default mappings
 			-- see config/mappings.lua for implementation
 			mappings = {

@@ -6,7 +6,7 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-        event = "BufReadPre",
+		event = "BufReadPre",
 		opts = {
 			---Add a space b/w comment and the line
 			padding = true,
@@ -73,7 +73,7 @@ return {
 	},
 	{
 		"folke/todo-comments.nvim",
-        event = "BufReadPre",
+		event = "BufReadPre",
 		opts = {},
 	},
 	{
@@ -142,6 +142,10 @@ return {
 	},
 	{
 		"lambdalisue/vim-suda",
-        event = "BufReadPre"
+		event = "BufReadPre",
+	},
+	{
+		"kevinhwang91/nvim-bqf",
+		ft = "qf",
 	},
 }
