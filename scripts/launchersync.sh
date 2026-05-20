@@ -3,7 +3,7 @@
 ROFI_CONFIG="$HOME/.config/rofi/launchers/type-7/style-2.rasi"
 
 # Query the current wallpaper from swww and extract the file path
-CURRENT_WALLPAPER=$(swww query | grep -m1 'image:' | awk -F': ' '{print $NF}' | tr -d '\r')
+CURRENT_WALLPAPER=$(awww query | grep -m1 'image:' | awk -F': ' '{print $NF}' | tr -d '\r')
 
 # Check if a valid wallpaper path was extracted
 if [[ -n "$CURRENT_WALLPAPER" ]]; then

@@ -17,7 +17,7 @@ OUTPUTS=($(swaymsg -t get_outputs | jq -r '.[].name'))
 
 # Get the current background - updated for multi-monitor format
 # We'll take the first monitor's wallpaper as they should all be in sync
-CURRENT_BACKGROUND=$(swww query | grep -m1 'image:' | awk -F': ' '{print $NF}' | tr -d '\r')
+CURRENT_BACKGROUND=$(awww query | grep -m1 'image:' | awk -F': ' '{print $NF}' | tr -d '\r')
 
 # Find the index of the current background in the list
 CURRENT_INDEX=-1
@@ -38,7 +38,7 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % ${#BACKGROUND_FILES[@]} ))
 
 # Set the wallpaper for each output
 for output in "${OUTPUTS[@]}"; do
-    swww img "${BACKGROUND_FILES[NEXT_INDEX]}" \
+    awww img "${BACKGROUND_FILES[NEXT_INDEX]}" \
         --outputs "$output" \
         --transition-type wipe \
         --transition-duration 4

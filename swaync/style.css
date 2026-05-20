@@ -333,6 +333,9 @@ trough {
 }
 
 /* MPRIS Widget Styling */
+.widget-mpris-player .mpris-background {
+  filter: blur(15px);
+}
 .widget-mpris {
   background-color: #1f1d2e;  /* --surface */
   border-radius: 0.5rem;
@@ -356,12 +359,17 @@ trough {
 .widget-mpris-title {
   color: #e0def4;  /* --text */
   font-weight: bold;
+  background-color: #1f1d2e;  /* --surface */
   margin: 0.25rem 0;
+  border: 1px solid #6e6a86;  /* --muted */
 }
 
 .widget-mpris-subtitle {
-  color: #908caa;  /* --subtle */
+  color: #e0def4;  /* --subtle */
+  font-weight:bold;
   font-size: 1rem;
+  background-color: #1f1d2e;  /* --surface */
+  border: 1px solid #6e6a86;  /* --muted */
   margin: 0.25rem 0;
 }
 
