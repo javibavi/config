@@ -10,7 +10,6 @@
         "custom/launcher",
         "clock",
         "custom/keyboard-layout",
-        "custom/cava-internal",
     ],
     "modules-center": [
         "sway/workspaces",
@@ -18,7 +17,6 @@
         "tray"
     ],
     "modules-right": [
-        "custom/playerctl",
         "backlight",
         "pulseaudio",
         "battery",
@@ -32,16 +30,16 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "하나",
-            "2": "둘",
-            "3": "셋",
-            "4": "넷",
-            "5": "다섯",
-            "6": "여섯",
-            "7": "일곱",
-            "8": "여덟",
-            "9": "아홉",
-            "10": "열"
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
         }
     },
     "custom/cava-internal": {
@@ -137,7 +135,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format": "⏾ ",
+        "format": " ",
         "on-click": "~/.config/rofi/powermenu/type-6/powermenu.sh",
         "tooltip": false
     },
@@ -145,7 +143,7 @@
         "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
         // Interval set only as a fallback, as the value is updated by signal
         "interval": 1,
-        "format": "{} ", // Icon: keyboard
+        "format": "{}  ", // Icon: keyboard
         // Signal sent by Sway key binding (~/.config/sway/key-bindings)
         "signal": 1, // SIGHUP
         "tooltip": false
@@ -181,10 +179,9 @@
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw"
     },
-
     "custom/scratchpad-indicator": {
         "interval": 2,
         "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-        "format": "{} "
+        "format": "{}  "
     }
 }

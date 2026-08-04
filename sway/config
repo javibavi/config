@@ -16,6 +16,7 @@ set $right l
 exec systemctl --user import-environment DISPLAY
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export XDG_CURRENT_DESKTOP=sway
+exec /usr/lib/xdg-desktop-portal
 
 ### Outputs
 output eDP-1 resolution 2880x1800@60Hz scale 2 position 1280,0
